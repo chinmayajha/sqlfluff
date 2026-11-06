@@ -1,0 +1,246 @@
+# YML test files are auto-generated from SQL files and should not be edited by
+# hand. To help enforce this, the "hash" field in the file must match a hash
+# computed by SQLFluff when running the tests. Please run
+# `python test/generate_parse_fixture_yml.py`  to generate them after adding or
+# altering SQL files.
+_hash: 80df2de626546aa098f554756021f80960018a9d5927193bed0acc555680a79c
+file:
+- statement:
+    explain_statement:
+      keyword: EXPLAIN
+      statement:
+        select_statement:
+          select_clause:
+            keyword: SELECT
+            select_clause_element:
+              column_reference:
+                naked_identifier: a
+          from_clause:
+            keyword: FROM
+            from_expression:
+              from_expression_element:
+                table_expression:
+                  table_reference:
+                    naked_identifier: t
+          where_clause:
+            keyword: WHERE
+            expression:
+              column_reference:
+                naked_identifier: a
+              comparison_operator:
+                raw_comparison_operator: '='
+              numeric_literal: '1'
+- statement_terminator: ;
+- statement:
+    explain_statement:
+    - keyword: EXPLAIN
+    - keyword: QUERY
+    - keyword: PLAN
+    - statement:
+        select_statement:
+          select_clause:
+            keyword: SELECT
+            select_clause_element:
+              column_reference:
+                naked_identifier: a
+          from_clause:
+            keyword: FROM
+            from_expression:
+              from_expression_element:
+                table_expression:
+                  table_reference:
+                    naked_identifier: t
+          where_clause:
+            keyword: WHERE
+            expression:
+              column_reference:
+                naked_identifier: a
+              comparison_operator:
+                raw_comparison_operator: '='
+              numeric_literal: '1'
+- statement_terminator: ;
+- statement:
+    explain_statement:
+    - keyword: EXPLAIN
+    - keyword: QUERY
+    - keyword: PLAN
+    - statement:
+        with_compound_statement:
+          keyword: WITH
+          common_table_expression:
+            naked_identifier: c
+            keyword: AS
+            bracketed:
+              start_bracket: (
+              select_statement:
+                select_clause:
+                  keyword: SELECT
+                  select_clause_element:
+                    column_reference:
+                      naked_identifier: a
+                from_clause:
+                  keyword: FROM
+                  from_expression:
+                    from_expression_element:
+                      table_expression:
+                        table_reference:
+                          naked_identifier: t
+              end_bracket: )
+          select_statement:
+            select_clause:
+              keyword: SELECT
+              select_clause_element:
+                column_reference:
+                  naked_identifier: a
+            from_clause:
+              keyword: FROM
+              from_expression:
+                from_expression_element:
+                  table_expression:
+                    table_reference:
+                      naked_identifier: c
+- statement_terminator: ;
+- statement:
+    explain_statement:
+    - keyword: EXPLAIN
+    - keyword: QUERY
+    - keyword: PLAN
+    - statement:
+        insert_statement:
+        - keyword: INSERT
+        - keyword: INTO
+        - table_reference:
+            naked_identifier: t
+        - bracketed:
+            start_bracket: (
+            column_reference:
+              naked_identifier: a
+            end_bracket: )
+        - values_clause:
+            keyword: VALUES
+            bracketed:
+              start_bracket: (
+              expression:
+                numeric_literal: '1'
+              end_bracket: )
+        - upsert_clause:
+          - keyword: 'ON'
+          - keyword: CONFLICT
+          - keyword: DO
+          - keyword: NOTHING
+- statement_terminator: ;
+- statement:
+    explain_statement:
+    - keyword: EXPLAIN
+    - keyword: QUERY
+    - keyword: PLAN
+    - statement:
+        update_statement:
+          keyword: UPDATE
+          table_reference:
+            naked_identifier: t
+          set_clause_list:
+            keyword: SET
+            set_clause:
+              naked_identifier: a
+              comparison_operator:
+                raw_comparison_operator: '='
+              expression:
+                numeric_literal: '2'
+          where_clause:
+            keyword: WHERE
+            expression:
+              column_reference:
+                naked_identifier: a
+              comparison_operator:
+                raw_comparison_operator: '='
+              numeric_literal: '1'
+- statement_terminator: ;
+- statement:
+    explain_statement:
+    - keyword: EXPLAIN
+    - keyword: QUERY
+    - keyword: PLAN
+    - statement:
+        delete_statement:
+          keyword: DELETE
+          from_clause:
+            keyword: FROM
+            from_expression:
+              from_expression_element:
+                table_expression:
+                  table_reference:
+                    naked_identifier: t
+          where_clause:
+            keyword: WHERE
+            expression:
+              column_reference:
+                naked_identifier: a
+              comparison_operator:
+                raw_comparison_operator: '='
+              numeric_literal: '1'
+- statement_terminator: ;
+- statement:
+    explain_statement:
+      keyword: EXPLAIN
+      statement:
+        create_index_statement:
+        - keyword: CREATE
+        - keyword: INDEX
+        - index_reference:
+            naked_identifier: i
+        - keyword: 'ON'
+        - table_reference:
+            naked_identifier: t
+        - bracketed:
+            start_bracket: (
+            index_column_definition:
+              naked_identifier: a
+            end_bracket: )
+- statement_terminator: ;
+- statement:
+    explain_statement:
+      keyword: EXPLAIN
+      statement:
+        pragma_statement:
+          keyword: PRAGMA
+          pragma_reference:
+            naked_identifier: foreign_keys
+- statement_terminator: ;
+- statement:
+    explain_statement:
+      keyword: EXPLAIN
+      statement:
+        drop_table_statement:
+        - keyword: DROP
+        - keyword: TABLE
+        - table_reference:
+            naked_identifier: t
+- statement_terminator: ;
+- statement:
+    explain_statement:
+      keyword: EXPLAIN
+      statement:
+        transaction_statement:
+          keyword: BEGIN
+- statement_terminator: ;
+- statement:
+    explain_statement:
+    - keyword: EXPLAIN
+    - keyword: QUERY
+    - keyword: PLAN
+    - statement:
+        select_statement:
+          select_clause:
+            keyword: SELECT
+            select_clause_element:
+              column_reference:
+                naked_identifier: plan
+          from_clause:
+            keyword: FROM
+            from_expression:
+              from_expression_element:
+                table_expression:
+                  table_reference:
+                    naked_identifier: query
+- statement_terminator: ;

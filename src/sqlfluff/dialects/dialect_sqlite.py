@@ -1313,6 +1313,21 @@ class AnalyzeStatementSegment(BaseSegment):
     )
 
 
+class ExplainStatementSegment(ansi.ExplainStatementSegment):
+    """An `EXPLAIN` or `EXPLAIN QUERY PLAN` statement.
+
+    https://www.sqlite.org/lang_explain.html
+    """
+
+    explainable_stmt = Ref("StatementSegment")
+
+    match_grammar: Matchable = Sequence(
+        "EXPLAIN",
+        Sequence("QUERY", "PLAN", optional=True),
+        explainable_stmt,
+    )
+
+
 class StatementSegment(ansi.StatementSegment):
     """Overriding StatementSegment to allow for additional segment parsing."""
 
